@@ -25,7 +25,7 @@
 //     // Fetch users from the API
 //     const fetchUsers = async () => {
 //       try {
-//         const response = await fetch('http://192.168.1.4:1234/booking');
+//         const response = await fetch('http://192.168.1.7:1234/booking');
 //         const data = await response.json();
 //         setUsers(data.data);
 //         console.log(data)
@@ -171,7 +171,7 @@ function Booking() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://192.168.1.4:1234/booking');
+        const response = await fetch('http://192.168.1.7:1234/booking');
         const data = await response.json();
         setUsers(data.data);
         console.log(' ',data.data.userId)

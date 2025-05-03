@@ -18,7 +18,7 @@
 //   useEffect(() => {
 //     const fetchVehicles = async () => {
 //       try {
-//         const response = await fetch('http://192.168.1.4:1234/vehicle');
+//         const response = await fetch('http://192.168.1.7:1234/vehicle');
 //         const data = await response.json();
 
 //         if (data.data) {
@@ -39,7 +39,7 @@
 //     console.log(id)
 
 //     try {
-//       const response = await fetch(`http://192.168.1.4:1234/vehicle/${id}`, {
+//       const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
 //         method: 'DELETE',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@
 //                         <div className="flex items-center gap-4">
 //                           <img
 //                             className="w-12 h-12 rounded-full object-cover"
-//                             src={vehicle.image[0] ? `http://192.168.1.4:1234/uploads/${vehicle.image[0]}` : "https://via.placeholder.com/150"}
+//                             src={vehicle.image[0] ? `http://192.168.1.7:1234/uploads/${vehicle.image[0]}` : "https://via.placeholder.com/150"}
 //                             alt={vehicle.title || 'Vehicle'}
 //                           />
 //                           <div>
@@ -177,7 +177,7 @@ function Vehicle() {
   useEffect(() => {
     const fetchVehicles = async () => {
       try {
-        const response = await fetch('http://192.168.1.4:1234/vehicle');
+        const response = await fetch('http://192.168.1.7:1234/vehicle');
         const data = await response.json();
 
         if (data.data) {
@@ -198,7 +198,7 @@ function Vehicle() {
     console.log(id);
 
     try {
-      const response = await fetch(`http://192.168.1.4:1234/vehicle/${id}`, {
+      const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -312,7 +312,7 @@ function Vehicle() {
                         <div className="flex items-center gap-4">
                           <img
                             className="w-12 h-12 rounded-full object-cover"
-                            src={vehicle.image[0] ? `http://192.168.1.4:1234/uploads/${vehicle.image[0]}` : "https://via.placeholder.com/150"}
+                            src={vehicle.image[0] ? `http://192.168.1.7:1234/uploads/${vehicle.image[0]}` : "https://via.placeholder.com/150"}
                             alt={vehicle.title || 'Vehicle'}
                           />
                           <div>

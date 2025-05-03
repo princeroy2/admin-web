@@ -3,7 +3,7 @@ import axios from 'axios';
     // Fetch users from the API
  const fetchUsers = async () => {
         try {
-          const response = await fetch('http://192.168.1.4:1234/users/allUsers');
+          const response = await fetch('http://192.168.1.7:1234/users/allUsers');
           const data = await response.json();
           console.log(data)
           
@@ -20,7 +20,7 @@ export default fetchUsers
 
 const fetchdriver = async () => {
     try {
-      const response = await fetch('http://192.168.1.4:1234/users/allUsers');
+      const response = await fetch('http://192.168.1.7:1234/users/allUsers');
       const data = await response.json();
       const filteredUsers = data.data.filter(user => user.role === 'DRIVER' && user.status === 'active');
      return filteredUsers
@@ -34,7 +34,7 @@ export  {fetchdriver}
 
 const fetchadmin = async () => {
     try {
-      const response = await fetch('http://192.168.1.4:1234/users/allUsers');
+      const response = await fetch('http://192.168.1.7:1234/users/allUsers');
       const data = await response.json();
       console.log(data)
       
@@ -50,7 +50,7 @@ export  {fetchadmin}
 
 const fetchoneuser = async (id) => {
   try {
-    const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+    const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
     const data = await response.json();
 
     return data; // return the actual user object (e.g. { name, email, role, ... })
@@ -67,7 +67,7 @@ export { fetchoneuser };
 
 const fetchdriverone = async (id) => {
   try {
-    const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+    const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
     const data = await response.json();
 
     return data; // return the actual user object (e.g. { name, email, role, ... })
@@ -81,7 +81,7 @@ export { fetchdriverone };
 
 const fetchonevehicle = async (id) => {
   try {
-    const response = await fetch(`http://192.168.1.4:1234/vehicle/specific/${id}`);
+    const response = await fetch(`http://192.168.1.7:1234/vehicle/specific/${id}`);
     const data = await response.json();
 
     return data; // return the actual user object (e.g. { name, email, role, ... })
@@ -96,7 +96,7 @@ export { fetchonevehicle };
 
 const fetchvehical = async () => {
     try {
-      const response = await fetch('http://192.168.1.4:1234/vehicle');
+      const response = await fetch('http://192.168.1.7:1234/vehicle');
       const data = await response.json();
       console.log(data)
       
@@ -113,7 +113,7 @@ const userpatch = async (userData) => {
   const token = localStorage.getItem('accessToken'); // Replace with your actual token retrieval method
   console.log('tokeeeeeeeeeeeeeen',token)
   try {
-    const response = await fetch(`http://192.168.1.4:1234/users`, {
+    const response = await fetch(`http://192.168.1.7:1234/users`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ export {userpatch}
 
 const patchvehicle = async (id,form,token) => {
   try {
-    const response = await fetch(`http://192.168.1.4:1234/vehicle/${id}`, {
+    const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${token}`,

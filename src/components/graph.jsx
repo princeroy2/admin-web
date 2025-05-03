@@ -108,7 +108,7 @@ const AdminVehicleChart = () => {
     <div
       style={{
         width: '100%',
-        maxWidth: '600px',
+        maxWidth: '900px',
         height: '300px',
         margin: '20px auto',
         padding: '20px',

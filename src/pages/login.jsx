@@ -42,7 +42,7 @@ const Login = () => {
       try {
         setLoading(true);
 
-        const response = await fetch('http://192.168.1.4:1234/auth/signin', {
+        const response = await fetch('http://192.168.1.7:1234/auth/signin', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

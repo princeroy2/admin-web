@@ -11,6 +11,7 @@ function Complainsid() {
   const [user, setUser] = useState([]);
 
     const { id } = useParams();
+    console.log('complainid',id)
   
   const navigate = useNavigate();
 
@@ -18,9 +19,10 @@ function Complainsid() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+        
+        const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
         const data = await response.json();
-        console.log(data)
+        console.log('complain',data)
         setUser(data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -60,8 +62,8 @@ function Complainsid() {
                     </tr>
                   </thead>
                   <tbody>
-                    {user.map((user, index) => (
-                      <tr key={index}>
+                   
+                      <tr >
                       
                       <td className="px-4 py-2">
                           <div className="flex items-center gap-4">
@@ -80,9 +82,10 @@ function Complainsid() {
                           </div>
                         </td>
                         <td className="px-4 py-2">{user.phone}</td>
+                        <td className="px-4 py-2">{user.email}</td>
                      
                       </tr>
-                    ))}
+                 
                   </tbody>
                 </table>
 

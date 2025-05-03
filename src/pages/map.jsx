@@ -51,7 +51,7 @@ export default function Maps() {
 
     const fetchBookingData = async () => {
       try {
-        const res = await fetch(`http://192.168.1.4:1234/booking/details/${id}`);
+        const res = await fetch(`http://192.168.1.7:1234/booking/details/${id}`);
         const data = await res.json();
         
         if (res.ok) {
@@ -150,7 +150,7 @@ export default function Maps() {
               {vehicles && (
                 <div className="bg-white p-4 rounded shadow">
                   <img
-                    src={vehicles.image ? `http://192.168.1.4:1234/uploads/${vehicles.image}` : 'https://via.placeholder.com/150'}
+                    src={vehicles.image ? `http://192.168.1.7:1234/uploads/${vehicles.image}` : 'https://via.placeholder.com/150'}
                     alt="Vehicle"
                     className="w-full h-40 object-cover rounded"
                   />
@@ -194,7 +194,7 @@ export default function Maps() {
                     {/* Car Marker with animation */}
                     <Marker position={getCarLocation()} ref={markerRef}
                     icon={L.icon({
-                        iconUrl: `http://192.168.1.4:1234/uploads/${vehicles.image}`,
+                        iconUrl: `http://192.168.1.7:1234/uploads/${vehicles.image}`,
                         iconSize: [40, 40], // [width, height] in pixels
                         iconAnchor: [20, 40], // optional: point of the icon which will correspond to marker's location
                         popupAnchor: [0, -40], // optional: where the popup opens relative to the icon

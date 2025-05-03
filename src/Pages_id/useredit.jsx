@@ -28,7 +28,7 @@ export default function EditUser() {
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+        const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
         console.log(response)
         const data = await response.json();
         if (response.ok) {
@@ -57,7 +57,7 @@ export default function EditUser() {
     const token = localStorage.getItem('accessToken'); // Replace with your actual token retrieval method
     console.log('tokeeeeeeeeeeeeeen',token)
     try {
-      const response = await fetch(`http://192.168.1.4:1234/users`, {
+      const response = await fetch(`http://192.168.1.7:1234/users`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -224,7 +224,7 @@ export default function EditUser() {
 
 //     const fetchUserData = async () => {
 //       try {
-//         const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+//         const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
 //         const data = await response.json();
 //         if (response.ok) {
 //           setUser(data);
@@ -258,7 +258,7 @@ export default function EditUser() {
 //     }
 
 //     try {
-//       const response = await fetch(`http://192.168.1.4:1234/users`, {
+//       const response = await fetch(`http://192.168.1.7:1234/users`, {
 //         method: 'PATCH',
 //         headers: {
 //           'Authorization': `Bearer ${token}`,

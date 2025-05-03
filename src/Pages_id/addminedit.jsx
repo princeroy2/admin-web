@@ -30,7 +30,7 @@ export default function Adminedit() {
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://192.168.1.4:1234/users/oneUser/${id}`);
+        const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
         const data = await response.json();
         if (response.ok) {
           setUser(data);
@@ -64,7 +64,7 @@ export default function Adminedit() {
     }
 
     try {
-      const response = await fetch(`http://192.168.1.4:1234/users`, {
+      const response = await fetch(`http://192.168.1.7:1234/users`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -16,7 +16,7 @@ function Complainuser() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://192.168.1.4:1234/Complaint');
+        const response = await fetch('http://192.168.1.7:1234/Complaint');
         const data = await response.json();
        console.log(data)
         setComplain(data.data);
@@ -53,33 +53,38 @@ function Complainuser() {
                 
                 </div>
 
-                <table className="min-w-full table-auto">
-                  <thead>
-                    <tr>
-                      <th className="px-4 py-2 text-left">description</th>
-                      <th className="px-4 py-2 text-left">reason</th>
-                        <th className="px-4 py-2 text-left">date</th>
-                      <th className="px-4 py-2 text-left">see</th>
-                   
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {complain.map((user, index) => (
-                      <tr key={index}>
-                      
-                        <td className="px-4 py-2">{user.description}</td>
-                        <td className="px-4 py-2">{user.reasons[0]}</td>
-                        <td className="px-4 py-2">
-  {new Date(user.createdAt).toLocaleString()}
-</td>
+                <div className="overflow-x-auto">
+  <table className="min-w-full table-auto">
+    <thead>
+      <tr>
+        <th className="px-4 py-2 text-left">Description</th>
+        <th className="px-4 py-2 text-left">Reason</th>
+        <th className="px-4 py-2 text-left">Date</th>
+        <th className="px-4 py-2 text-left">See</th>
+      </tr>
+    </thead>
+    <tbody>
+      {currentUsers.map((user, index) => (
+        <tr key={index}>
+          <td className="px-4 py-2 max-w-sm break-words whitespace-pre-wrap">
+            <p className="text-gray-800">{user.description}</p>
+          </td>
+          <td className="px-4 py-2">{user.reasons[0]}</td>
+          <td className="px-4 py-2">{new Date(user.createdAt).toLocaleString()}</td>
+          <td className="px-4 py-2">
+            <button
+              className="text-green-500 hover:underline"
+              onClick={() => navigate(`/complains/${user.userId}`)}
+            >
+              See Details
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
-                        <td className="px-4 py-2">
-                          <button className="text-green-500 hover:underline" onClick={() => navigate(`/complains/${user.userId}`)}>See Details</button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
 
                 {/* Pagination Controls */}
                 <div className="flex justify-center mt-6 gap-2">

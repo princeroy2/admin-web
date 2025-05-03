@@ -25,7 +25,7 @@
 //     // Fetch users from the API
 //     const fetchUsers = async () => {
 //       try {
-//         const response = await fetch('http://192.168.1.4:1234/users/allUsers');
+//         const response = await fetch('http://192.168.1.7:1234/users/allUsers');
 //         const data = await response.json();
         
 //         // Filter users with role 'USER'
@@ -50,7 +50,7 @@
 //     console.log(id)
 
 //     try {
-//       const response = await fetch(`http://192.168.1.4:1234/users/deleteAccount/${id}`, {
+//       const response = await fetch(`http://192.168.1.7:1234/users/deleteAccount/${id}`, {
 //         method: 'DELETE',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ function Admin() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://192.168.1.4:1234/users/allUsers');
+        const response = await fetch('http://192.168.1.7:1234/users/allUsers');
         const data = await response.json();
         const filteredUsers = data.data.filter(user => user.role === 'ADMIN');
         setUsers(filteredUsers);
@@ -184,7 +184,7 @@ function Admin() {
 
   const Handledel = async (id) => {
     try {
-      const response = await fetch(`http://192.168.1.4:1234/users/deleteAccount/${id}`, {
+      const response = await fetch(`http://192.168.1.7:1234/users/deleteAccount/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
