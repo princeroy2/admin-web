@@ -25,7 +25,7 @@
 //     // Fetch users from the API
 //     const fetchUsers = async () => {
 //       try {
-//         const response = await fetch('http://192.168.1.7:1234/booking');
+//         const response = await fetch('http://192.168.1.5:1234/booking');
 //         const data = await response.json();
 //         setUsers(data.data);
 //         console.log(data)
@@ -158,6 +158,7 @@ function Booking() {
   const [activeMenu, setActiveMenu] = useState('users');
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [assignedId, setAssignedid] = useState();
   const usersPerPage = 5;
   const navigate = useNavigate();
 
@@ -171,7 +172,7 @@ function Booking() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://192.168.1.7:1234/booking');
+        const response = await fetch('http://192.168.1.5:1234/booking');
         const data = await response.json();
         setUsers(data.data);
         console.log(' ',data.data.userId)
@@ -194,6 +195,11 @@ function Booking() {
     // Handle deletion logic
   };
 
+  useEffect(() => {
+    const assignedid=localStorage.getItem('assignedId');
+    setAssignedid(assignedid);
+  }, [])
+  
   // Pagination logic
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
@@ -243,12 +249,14 @@ function Booking() {
                         <td className="px-4 py-2">{user.fuelConsumption} liter</td>
                         <td className="px-4 py-2">{Math.floor(user.totalDistance)} km</td>
                         <td className="px-4 py-2">
-                          <button
-                            className="text-green-500 hover:underline"
-                            onClick={() => navigate(`/booking/edit/${user._id}`)}
-                          >
-                            Edit
-                          </button>
+                          {
+                            user._id === assignedId ? (
+                              <button className="text-blue-500 hover:underline" onClick={() => navigate(`/booking/edit/${user._id}`)}>Edit</button>
+                            ) : (
+                              <h3>Assigned</h3>
+                              
+                            )
+                          }
                           {/* <button
                             className="text-red-500 hover:underline ml-2"
                             onClick={() => Handledel(user._id)}

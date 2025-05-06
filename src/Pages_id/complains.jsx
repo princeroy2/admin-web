@@ -20,7 +20,7 @@ function Complainsid() {
     const fetchUsers = async () => {
       try {
         
-        const response = await fetch(`http://192.168.1.7:1234/users/oneUser/${id}`);
+        const response = await fetch(`http://192.168.1.5:1234/users/oneUser/${id}`);
         const data = await response.json();
         console.log('complain',data)
         setUser(data);

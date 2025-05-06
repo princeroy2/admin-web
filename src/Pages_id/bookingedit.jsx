@@ -42,7 +42,7 @@ export default function BookingEdit() {
 
 
       try {
-        const response = await fetch(`http://192.168.1.7:1234/booking/details/${id}`);
+        const response = await fetch(`http://192.168.1.5:1234/booking/details/${id}`);
         const data = await response.json();
         if (response.ok) {
           setFormData(data); // Set initial form data for driverId and vehicleId
@@ -74,7 +74,7 @@ export default function BookingEdit() {
     console.log(token,'admin token')
 
     try {
-      const response = await fetch(`http://192.168.1.7:1234/booking/${id}`, {
+      const response = await fetch(`http://192.168.1.5:1234/booking/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -84,6 +84,8 @@ export default function BookingEdit() {
       });
 
       const data = await response.json();
+      await localStorage.setItem('assignedid', id);
+
       if (response.ok) {
         setSuccessMessage('Booking updated successfully!');
         console.log(data,'its vehicle id')

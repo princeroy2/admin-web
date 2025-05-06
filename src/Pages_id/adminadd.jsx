@@ -61,7 +61,7 @@ function Adminaddd  () {
 
     // Submit the form data
     try {
-      const response = await fetch('http://192.168.1.7:1234/auth/signup', {
+      const response = await fetch('http://192.168.1.5:1234/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

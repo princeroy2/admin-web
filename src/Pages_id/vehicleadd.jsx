@@ -83,7 +83,7 @@ function VehicleForm() {
     try {
       setIsSubmitting(true);
       console.log(vehicleData)
-      const response = await fetch('http://192.168.1.7:1234/vehicle', {
+      const response = await fetch('http://192.168.1.5:1234/vehicle', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${Token}`, // Send the token as Bearer token

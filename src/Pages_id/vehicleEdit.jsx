@@ -40,7 +40,7 @@
 
 //     const fetchUserData = async () => {
 //       try {
-//         const response = await fetch(`http://192.168.1.7:1234/vehicle/specific/${id}`);
+//         const response = await fetch(`http://192.168.1.5:1234/vehicle/specific/${id}`);
 //         console.log(response);
 //         const data = await response.json();
 //         console.log(data,'xdaaaaaaaaaaaaaaaaaaaaaaaa');
@@ -78,7 +78,7 @@
 //   //   const token = localStorage.getItem('accessToken'); 
 
 //   //   try {
-//   //     const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
+//   //     const response = await fetch(`http://192.168.1.5:1234/vehicle/${id}`, {
 //   //       method: 'PATCH',
 //   //       headers: {
 //   //         'Content-Type': 'application/json',
@@ -137,7 +137,7 @@
 //     }
   
 //     try {
-//       const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
+//       const response = await fetch(`http://192.168.1.5:1234/vehicle/${id}`, {
 //         method: 'PATCH',
 //         headers: {
 //           'Authorization': `Bearer ${token}`,
@@ -462,7 +462,7 @@ export default function Vedit() {
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://192.168.1.7:1234/vehicle/specific/${id}`);
+        const response = await fetch(`http://192.168.1.5:1234/vehicle/specific/${id}`);
         console.log(response);
         const data = await response.json();
         console.log(data, 'xdaaaaaaaaaaaaaaaaaaaaaaaa');
@@ -539,7 +539,7 @@ export default function Vedit() {
     }
   
     try {
-      const response = await fetch(`http://192.168.1.7:1234/vehicle/${id}`, {
+      const response = await fetch(`http://192.168.1.5:1234/vehicle/${id}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

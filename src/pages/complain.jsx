@@ -16,7 +16,7 @@ function Complainuser() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://192.168.1.7:1234/Complaint');
+        const response = await fetch('http://192.168.1.5:1234/Complaint');
         const data = await response.json();
        console.log(data)
         setComplain(data.data);

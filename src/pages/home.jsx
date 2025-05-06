@@ -30,7 +30,6 @@ function Home() {
             {/* 4 Small Cards in Grid Layout */}
         <Card/>
 
-<AdminVehicleChart/>
             <div className="flex flex-row gap-10">
     
             </div>
