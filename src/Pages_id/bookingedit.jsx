@@ -84,7 +84,7 @@ export default function BookingEdit() {
       });
 
       const data = await response.json();
-      await localStorage.setItem('assignedid', id);
+      await localStorage.setItem('assignedId', id);
 
       if (response.ok) {
         setSuccessMessage('Booking updated successfully!');

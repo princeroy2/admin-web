@@ -204,7 +204,7 @@ function Booking() {
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-  const totalPages = Math.ceil(users.length / usersPerPage);
+  const totalPages = Math.ceil(users?.length / usersPerPage);
 
   return (
     <div>
@@ -238,7 +238,7 @@ function Booking() {
                     </tr>
                   </thead>
                   <tbody>
-                    {currentUsers.map((user, index) => (
+                    {currentUsers?.map((user, index) => (
                       <tr key={index}>
                         <td className="px-4 py-2">
                           {user.title}
@@ -251,9 +251,11 @@ function Booking() {
                         <td className="px-4 py-2">
                           {
                             user._id === assignedId ? (
-                              <button className="text-blue-500 hover:underline" onClick={() => navigate(`/booking/edit/${user._id}`)}>Edit</button>
-                            ) : (
                               <h3>Assigned</h3>
+
+                            ) : (
+                              <button className="text-green-500 hover:underline" onClick={() => navigate(`/booking/edit/${user._id}`)}>Assign</button>
+
                               
                             )
                           }
